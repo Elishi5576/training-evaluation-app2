@@ -1,0 +1,16 @@
+
+<!doctype html>
+<title>Training Evaluation</title>
+<h2>Training Evaluation for {{ emp_a }} and {{ emp_b }}</h2>
+<form method=post>
+  <input type="hidden" name="emp_a" value="{{ emp_a }}">
+  <input type="hidden" name="emp_b" value="{{ emp_b }}">
+  {% for emp in [emp_a, emp_b] %}
+    <h3>{{ emp }}</h3>
+    {% for cat in categories %}
+      <label>{{ cat }} (1-5):</label>
+      <input type="number" name="{{ emp }}_{{ cat }}" min="1" max="5" required><br>
+    {% endfor %}
+  {% endfor %}
+  <br><input type=submit value=Submit>
+</form>
