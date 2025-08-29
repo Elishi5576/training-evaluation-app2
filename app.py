@@ -13,7 +13,7 @@ categories = [
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return "Service is running"
+    return render_template("form.html")
     if request.method == 'POST':
         emp_a = request.form['emp_a_name']
         emp_b = request.form['emp_b_name']
